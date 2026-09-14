@@ -1,0 +1,368 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Severin Schraven — research in mathematical physics, analysis, spectral theory, and arithmetic statistics. Publications, teaching, and contact information.">
+  <meta name="author" content="Severin Schraven">
+  <meta name="color-scheme" content="light">
+  <title>Severin Schraven | Mathematics</title>
+  <!-- Self-contained static site. Academic source: Severin Schraven's CV,
+       updated 14 August 2026. Review position and publication status before publishing.
+       No external fonts, JavaScript, analytics, or image assets are required. -->
+  <style>
+    :root {
+      --paper: #faf9f5;
+      --ink: #182c38;
+      --body: #36454d;
+      --muted: #5d6970;
+      --link: #205c77;
+      --line: #d7dedf;
+      --wash: #edf1ef;
+      --serif: Georgia, "Times New Roman", serif;
+      --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; background: var(--paper); color: var(--body); font: 17px/1.65 var(--sans); }
+    a { color: var(--link); text-underline-offset: .22em; text-decoration-thickness: 1px; }
+    a:hover { text-decoration-thickness: 2px; }
+    a:focus-visible, summary:focus-visible { outline: 3px solid var(--link); outline-offset: 5px; }
+    p { margin: 0 0 1rem; }
+    h1, h2, h3 { color: var(--ink); font-weight: 400; }
+    h1, h2 { font-family: var(--serif); }
+    h1 { margin: .3rem 0 1.2rem; font-size: clamp(2.8rem, 6vw, 4.8rem); line-height: 1.08; letter-spacing: -.045em; }
+    h2 { margin: 0; font-size: clamp(2rem, 3.6vw, 2.55rem); line-height: 1.18; letter-spacing: -.025em; }
+    h3 { margin: 0 0 .45rem; line-height: 1.4; font-size: 1.08rem; font-weight: 600; }
+    .wrap { max-width: 1130px; margin-inline: auto; padding-inline: 42px; }
+    .skip { position: absolute; left: 20px; top: -100px; padding: 10px 18px; background: white; z-index: 10; }
+    .skip:focus { top: 15px; }
+    .site-header { border-top: 5px solid var(--ink); border-bottom: 1px solid var(--line); }
+    .header-inner { min-height: 80px; display: flex; justify-content: space-between; align-items: center; gap: 24px; }
+    .wordmark { color: var(--ink); font-family: var(--serif); font-size: 1.28rem; text-decoration: none; white-space: nowrap; }
+    nav { display: flex; gap: 26px; flex-wrap: wrap; font-size: .87rem; }
+    nav a { color: var(--body); text-decoration: none; padding-block: 8px; }
+    nav a:hover { text-decoration: underline; }
+    .hero { display: grid; grid-template-columns: minmax(0, 1fr) 245px; gap: 65px; padding-block: 76px 64px; align-items: start; }
+    .eyebrow { color: var(--link); font-size: .76rem; letter-spacing: .15em; text-transform: uppercase; font-weight: 650; }
+    .subtitle { color: var(--ink); font-size: 1.15rem; margin-bottom: 1.45rem; }
+    .intro { max-width: 44em; font-size: 1.07rem; line-height: 1.75; }
+    .buttons { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 26px; }
+    .button { border: 1px solid var(--ink); color: var(--ink); text-decoration: none; padding: 9px 17px; border-radius: 3px; font-size: .88rem; }
+    .button.primary { background: var(--ink); color: white; }
+    .button:hover { text-decoration: underline; }
+    .profile-note { border-top: 2px solid var(--ink); padding-top: 20px; margin-top: 16px; font-size: .92rem; }
+    .profile-note .label { display: block; font-size: .73rem; font-weight: 650; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); margin-bottom: 9px; }
+    .profile-note strong { display: block; font-weight: 550; color: var(--ink); }
+    .profile-note .small-link { font-size: .8rem; overflow-wrap: anywhere; }
+    .profile-note p { margin-bottom: 22px; }
+    section { padding-block: 50px; border-top: 1px solid var(--line); scroll-margin-top: 25px; }
+    .section-heading { display: flex; align-items: baseline; justify-content: space-between; gap: 22px; margin-bottom: 31px; }
+    .section-number { font-size: .73rem; color: var(--muted); letter-spacing: .12em; white-space: nowrap; }
+    .research-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 30px; }
+    .research-card { border-left: 2px solid var(--line); padding-left: 20px; }
+    .research-card h3 { font-size: 1.08rem; }
+    .research-card p { font-size: .95rem; margin-bottom: 0; }
+    .research-lead { max-width: 780px; margin: -7px 0 30px; }
+    .publications, .talks { margin: 0; padding: 0; list-style: none; }
+    .publication { display: grid; grid-template-columns: 63px minmax(0, 1fr); gap: 20px; padding-block: 21px; border-top: 1px solid var(--line); }
+    .publication:first-child { border-top: 0; padding-top: 0; }
+    .pub-year { color: var(--muted); font-size: .85rem; padding-top: 3px; font-variant-numeric: tabular-nums; }
+    .publication h3 { font-family: var(--serif); font-size: 1.21rem; font-weight: 400; margin-bottom: .35rem; }
+    .publication h3 a { color: var(--ink); }
+    .authors { font-size: .91rem; margin-bottom: .13rem; }
+    .venue { font-size: .88rem; margin: 0; color: var(--muted); }
+    .section-intro { margin-top: -10px; margin-bottom: 24px; font-size: .91rem; color: var(--muted); }
+    .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; }
+    .talk { margin-bottom: 27px; }
+    .talk:last-child { margin-bottom: 0; }
+    .talk-date { color: var(--link); font-size: .81rem; margin-bottom: .28rem; }
+    .talk h3 { font-weight: 500; font-size: .98rem; }
+    .muted { color: var(--muted); font-size: .89rem; margin-bottom: 0; }
+    .teaching p { font-size: .95rem; }
+    .teaching h3 { margin-top: 24px; }
+    .teaching h3:first-child { margin-top: 0; }
+    .career { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 30px; }
+    .career-item { border-top: 2px solid var(--line); padding-top: 16px; }
+    .career-item .date { font-size: .8rem; color: var(--muted); margin-bottom: 7px; }
+    .career-item h3 { font-size: 1.05rem; }
+    .career-item p { font-size: .91rem; margin-bottom: .5rem; }
+    .contact-section { background: var(--wash); padding: 36px; border: 1px solid var(--line); margin-block: 20px 54px; }
+    .contact-section .section-heading { margin-bottom: 23px; }
+    .contact-grid { display: grid; grid-template-columns: 1.1fr 1fr; gap: 35px; }
+    address { font-style: normal; font-size: .94rem; }
+    .contact-label { color: var(--muted); font-size: .72rem; letter-spacing: .12em; text-transform: uppercase; margin-bottom: 9px; }
+    .email { overflow-wrap: anywhere; }
+    .contact-links { font-size: .94rem; }
+    .footer { border-top: 1px solid var(--line); padding-block: 23px; font-size: .77rem; color: var(--muted); }
+    .footer-inner { display: flex; gap: 12px 30px; justify-content: space-between; flex-wrap: wrap; }
+    @media (max-width: 850px) {
+      .wrap { padding-inline: 28px; }
+      .hero { gap: 35px; grid-template-columns: minmax(0, 1fr) 215px; }
+      .research-grid { gap: 20px; }
+      .two-col { gap: 36px; }
+    }
+    @media (max-width: 660px) {
+      body { font-size: 16px; }
+      .wrap { padding-inline: 22px; }
+      .header-inner { flex-direction: column; align-items: flex-start; gap: 5px; padding-block: 14px 12px; }
+      nav { gap: 12px 20px; font-size: .81rem; }
+      .hero { grid-template-columns: 1fr; gap: 26px; padding-block: 44px 36px; }
+      .profile-note { margin-top: 0; padding-top: 18px; }
+      .profile-note p { margin-bottom: 13px; }
+      .research-grid, .two-col, .career, .contact-grid { grid-template-columns: 1fr; gap: 27px; }
+      .research-card { padding-left: 17px; }
+      section { padding-block: 34px; }
+      .section-heading { gap: 12px; margin-bottom: 25px; }
+      .section-number { display: none; }
+      .publication { grid-template-columns: 1fr; gap: 5px; }
+      .pub-year { padding: 0; }
+      .publication h3 { font-size: 1.15rem; }
+      .contact-section { padding: 24px 20px; margin-block: 10px 36px; }
+      .footer-inner { flex-direction: column; gap: 5px; }
+    }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+    @media print {
+      body { background: white; color: black; font-size: 10pt; }
+      .wrap { max-width: none; padding: 0; }
+      nav, .buttons, .skip, .section-number { display: none; }
+      .site-header { border-top: 0; }
+      .header-inner { min-height: 35px; }
+      .hero { padding-block: 25px; gap: 28px; }
+      h1 { font-size: 32pt; }
+      h2 { font-size: 21pt; }
+      section { padding-block: 22px; }
+      .publication, .career-item, .research-card, .talk { break-inside: avoid; }
+      .contact-section { padding: 20px; margin-bottom: 20px; }
+      a { color: inherit; }
+      .footer { font-size: 8pt; }
+    }
+  </style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header" id="top">
+  <div class="wrap header-inner">
+    <a class="wordmark" href="#top">Severin Schraven</a>
+    <nav aria-label="Main navigation">
+      <a href="#research">Research</a>
+      <a href="#publications">Publications</a>
+      <a href="#teaching">Teaching &amp; talks</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+<main class="wrap" id="main">
+  <!-- EDIT: introduction and current affiliation -->
+  <div class="hero">
+    <div>
+      <p class="eyebrow">Mathematical physics · Analysis · Spectral theory</p>
+      <h1>Severin Schraven</h1>
+      <p class="subtitle">Postdoctoral Fellow<br>Technical University of Munich</p>
+      <p class="intro">My research lies at the interface of mathematical physics, analysis, and spectral theory. I am interested in effective structures that reduce complicated global problems to tractable local or low-dimensional ones.</p>
+      <p class="intro">At TUM, I am a member of Simone Warzel’s research group. Previously, I was a postdoctoral fellow at the University of British Columbia, working in the groups of Sven Bachmann and Richard Froese.</p>
+      <div class="buttons">
+        <a class="button primary" href="#publications">Publications &amp; preprints</a>
+        <a class="button" href="mailto:severin.schraven@cit.tum.de">Email me</a>
+        <!-- OPTIONAL CV LINK: first upload a reviewed public-facing file named cv.pdf,
+             then remove the comment markers around the following line.
+        <a class="button" href="cv.pdf">CV (PDF)</a>
+        -->
+      </div>
+    </div>
+    <aside class="profile-note" aria-label="Academic profile">
+      <p><span class="label">Affiliation</span><strong>Department of Mathematics</strong>Technical University of Munich<br>Garching, Germany</p>
+      <p><span class="label">Researcher identifier</span><a href="https://orcid.org/0000-0002-9116-6457">ORCID</a><br><span class="small-link">0000-0002-9116-6457</span></p>
+      <p><span class="label">Academic background</span>Ph.D. in Mathematics<br>University of Zurich, 2021<br>Supervised by B. Schlein</p>
+    </aside>
+  </div>
+
+  <!-- EDIT: research descriptions -->
+  <section id="research" aria-labelledby="research-heading">
+    <div class="section-heading"><h2 id="research-heading">Research</h2><span class="section-number" aria-hidden="true">01 / RESEARCH AREAS</span></div>
+    <p class="research-lead">My current directions include rigorous quantum many-body theory, the spectral theory of differential operators, and local-to-global principles in arithmetic statistics.</p>
+    <div class="research-grid">
+      <article class="research-card">
+        <h3>Quantum many-body theory</h3>
+        <p>Bose–Einstein condensation, nonlinear adiabatic dynamics, and fractional quantum Hall systems.</p>
+      </article>
+      <article class="research-card">
+        <h3>Spectral theory</h3>
+        <p>Schrödinger, Witten, and Fokker–Planck operators; eigenvalue estimates and the landscape function.</p>
+      </article>
+      <article class="research-card">
+        <h3>Arithmetic statistics</h3>
+        <p>Local-to-global principles, expected values and higher moments over number fields and function fields.</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- EDIT: publications. Copy one <li class="publication"> ... </li> block to add a paper.
+       Publication/preprint status follows the supplied CV dated 14 August 2026.
+       Links are added only where the CV supplies an explicit identifier. -->
+  <section id="publications" aria-labelledby="publications-heading">
+    <div class="section-heading"><h2 id="publications-heading">Publications &amp; preprints</h2><span class="section-number" aria-hidden="true">02 / PAPERS</span></div>
+    <ol class="publications" role="list">
+      <li class="publication">
+        <div class="pub-year">2026</div>
+        <div>
+          <h3><a href="https://arxiv.org/abs/2601.23078">Mermin–Wagner theorems for quantum systems with multipole symmetries</a></h3>
+          <p class="authors">T. Feistl, S. Schraven, and S. Warzel</p>
+          <p class="venue">Preprint · arXiv:2601.23078</p>
+        </div>
+      </li>
+      <li class="publication">
+        <div class="pub-year">2026</div>
+        <div>
+          <h3><a href="https://arxiv.org/abs/2601.12165">Fractional Quantum Hall States: Infinite Matrix Product Representation and its Implications</a></h3>
+          <p class="authors">S. Schraven and S. Warzel</p>
+          <p class="venue">Preprint · arXiv:2601.12165</p>
+        </div>
+      </li>
+      <li class="publication">
+        <div class="pub-year">2025</div>
+        <div>
+          <h3>Local to global principle for higher moments over function fields</h3>
+          <p class="authors">A. Hsiao, J. Ma Blackmer, S. Schraven, and Y. Q. Wen</p>
+          <p class="venue">INTEGERS 25, Paper A2</p>
+        </div>
+      </li>
+      <li class="publication">
+        <div class="pub-year">2024</div>
+        <div>
+          <h3>Two-sided Lieb–Thirring bounds</h3>
+          <p class="authors">S. Bachmann, R. Froese, and S. Schraven</p>
+          <p class="venue">J. Math. Phys. 65, 102102</p>
+        </div>
+      </li>
+      <li class="publication">
+        <div class="pub-year">2023</div>
+        <div>
+          <h3>Counting eigenvalues of Schrödinger operators using the landscape function</h3>
+          <p class="authors">S. Bachmann, R. Froese, and S. Schraven</p>
+          <p class="venue">J. Spectr. Theory 13(4), 1445–1472</p>
+        </div>
+      </li>
+      <li class="publication">
+        <div class="pub-year">2023</div>
+        <div>
+          <h3>Geometric sieve over number fields for higher moments</h3>
+          <p class="authors">G. Micheli, S. Schraven, S. Tinani, and V. Weger</p>
+          <p class="venue">Res. Number Theory 9(3), Article 62</p>
+        </div>
+      </li>
+      <li class="publication">
+        <div class="pub-year">2022</div>
+        <div>
+          <h3>Bogoliubov theory for trapped bosons in the Gross–Pitaevskii regime</h3>
+          <p class="authors">C. Brennecke, B. Schlein, and S. Schraven</p>
+          <p class="venue">Ann. Henri Poincaré 23, 1583–1658</p>
+        </div>
+      </li>
+      <li class="publication">
+        <div class="pub-year">2022</div>
+        <div>
+          <h3>Bose–Einstein condensation with optimal rate for trapped bosons in the Gross–Pitaevskii regime</h3>
+          <p class="authors">C. Brennecke, B. Schlein, and S. Schraven</p>
+          <p class="venue">Math. Phys. Anal. Geom. 25, Article 12</p>
+        </div>
+      </li>
+      <li class="publication">
+        <div class="pub-year">2022</div>
+        <div>
+          <h3>A local to global principle for expected values</h3>
+          <p class="authors">G. Micheli, S. Schraven, and V. Weger</p>
+          <p class="venue">J. Number Theory 238, 1–16</p>
+        </div>
+      </li>
+    </ol>
+  </section>
+
+  <section id="teaching" aria-labelledby="teaching-heading">
+    <div class="section-heading"><h2 id="teaching-heading">Teaching &amp; talks</h2><span class="section-number" aria-hidden="true">03 / ACADEMIC ACTIVITIES</span></div>
+    <div class="two-col">
+      <div class="teaching">
+        <h3>Teaching</h3>
+        <p>At the University of British Columbia, I taught MATH 101, <em>Integral Calculus with Applications to Physical Sciences and Engineering</em>, in Spring 2022 and Spring 2023, and MATH 100, <em>Differential Calculus with Applications to Physical Sciences and Engineering</em>, in Fall 2022.</p>
+        <p>My earlier teaching activities include Analysis I and II, analysis for chemistry students, stochastics for natural science students, and a dynamical systems seminar.</p>
+        <h3>Supervision</h3>
+        <p>With Sven Bachmann, I jointly supervised undergraduate research on higher moments over function fields, leading to a publication in <em>INTEGERS</em> in 2025.</p>
+        <p>With Simone Warzel, I co-supervised Timo Feistl’s Master’s research on Mermin–Wagner theorems for systems with multipole symmetries.</p>
+      </div>
+      <div>
+        <h3 style="margin-bottom: 20px">Selected talks</h3>
+        <ul class="talks" role="list">
+      <li class="talk">
+        <p class="talk-date">2 July 2026</p>
+        <h3>Fractional Quantum Hall States: Infinite Matrix Product Representation and its Implications</h3>
+        <p class="muted">KSCAM Conference · Online</p>
+      </li>
+      <li class="talk">
+        <p class="talk-date">18 March 2026</p>
+        <h3>Fractional Quantum Hall States: Infinite Matrix Product Representation and its Implications</h3>
+        <p class="muted">German Physical Society Spring Meeting · Erlangen</p>
+      </li>
+      <li class="talk">
+        <p class="talk-date">9 February 2026</p>
+        <h3>Fractional Quantum Hall States: Infinite Matrix Product Representation and its Implications</h3>
+        <p class="muted">Recent Advances in Many-Particle Systems · Pisa</p>
+      </li>
+      <li class="talk">
+        <p class="talk-date">4 November 2025</p>
+        <h3>Expansion coefficients of powers of Vandermonde determinants</h3>
+        <p class="muted">UBC Differential Geometry, Mathematical Physics and PDE Seminar · Vancouver</p>
+      </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="background" aria-labelledby="background-heading">
+    <div class="section-heading"><h2 id="background-heading">Academic background</h2><span class="section-number" aria-hidden="true">04 / APPOINTMENTS &amp; EDUCATION</span></div>
+    <div class="career">
+      <article class="career-item">
+        <p class="date">April 2024–present</p>
+        <h3>Technical University of Munich</h3>
+        <p>Postdoctoral Fellow</p>
+        <p class="muted">Research group of Simone Warzel</p>
+      </article>
+      <article class="career-item">
+        <p class="date">December 2021–March 2024</p>
+        <h3>University of British Columbia</h3>
+        <p>Postdoctoral Fellow</p>
+        <p class="muted">Research groups of Sven Bachmann and Richard Froese</p>
+      </article>
+      <article class="career-item">
+        <p class="date">2017–2021</p>
+        <h3>University of Zurich</h3>
+        <p>Ph.D. in Mathematics</p>
+        <p class="muted">Thesis: <em>Spectral Properties of Trapped Bosons in the Gross–Pitaevskii Limit</em></p>
+      </article>
+    </div>
+  </section>
+
+  <!-- EDIT: professional contact details. Personal phone number and biographical
+       personal data from the supplied CV are deliberately not included. -->
+  <section class="contact-section" id="contact" aria-labelledby="contact-heading">
+    <div class="section-heading"><h2 id="contact-heading">Contact</h2></div>
+    <div class="contact-grid">
+      <div>
+        <p class="contact-label">Email &amp; profile</p>
+        <p class="contact-links"><a class="email" href="mailto:severin.schraven@cit.tum.de">severin.schraven@cit.tum.de</a><br><a href="https://orcid.org/0000-0002-9116-6457">ORCID: 0000-0002-9116-6457</a></p>
+      </div>
+      <div>
+        <p class="contact-label">Departmental address</p>
+        <address>Department of Mathematics<br>Technical University of Munich<br>Boltzmannstr. 3<br>85748 Garching b. München, Germany</address>
+      </div>
+    </div>
+  </section>
+</main>
+<footer class="footer">
+  <div class="wrap footer-inner">
+    <span>Severin Schraven</span>
+    <span>Academic information: CV dated 14 August 2026</span>
+    <a href="#top">Back to top</a>
+  </div>
+</footer>
+</body>
+</html>
